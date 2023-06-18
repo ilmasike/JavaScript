@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+        /*方法：*/
+        function nowAge2() {
+            let now=new Date().getFullYear();
+            return now - this.birth;   /*这里直接调用，就会报错，因为birth并没有定义。
+         我没可以通过apply（）方法，将this指向某一个对象，这样就可以直接调用此方法了*/
+
+        }
+
+        var kuangshen={
+            name:"huzhenkun",
+            birth:1998,
+            hobby:"mako",
+            // nowAge:function(){  /*这是一个方法*/
+            //     let now=new Date().getFullYear();
+            //     return now - this.birth;
+            // }
+
+            nowAge:nowAge2/*调用这个方法。就是把方法写在外面，再调用了*/
+            /*这里很无语啊，nowAge2后面加括号会报错！*/
+        }
+
+
+
+        //给this指定参数对象
+        nowAge2.apply(kuangshen,[]);//nowAge2里面的this，指向了kaugnshen对象,参数为空
+
+
+
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

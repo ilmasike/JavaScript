@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+    /*1.1想要给person添加一个方法：    */
+//新版本：es6之后
+    class person{//定义一个人的类
+        constructor(name) {
+            this.name=name;
+        }
+        hello(){
+            alert(this.name+"say hello!!");
+        }
+
+    }
+
+    var xiaoming=new person("小明");
+    console.log(new person("卡卡罗特！！").hello());
+
+    //2.继承
+    class Student extends person{
+        constructor(name,grade) {
+           super(name);/*继承父类的name相关设置*/
+           this.grade=grade;
+        }
+        //除了继承， 还可以有自己的方法：
+        myGrade(){
+            alert(this.name+"的年纪为:-->"+this.grade);
+        }
+
+    }
+
+    var bulma=new Student("布尔玛",17);
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*把自己的代码全部放入唯一的名字空间 MYAPP 中，会大大减少全局变量冲突的可能。*/
+        /*jQuary就是这么干的。*/
+
+
+        /*自定义全局变量*/
+        var huApp={};
+
+        /*定义全局变量的属性、方法等。以后就调用自己自定义的   全局变量*/
+        huApp.name=huzhenkun;
+        huApp.age=17;
+        huApp.add=function (a,b) {
+            return a+b;
+        }
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

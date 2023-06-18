@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+        var arr=[3,4,5];
+        // for(var num in arr){/*这个是下标*/
+        for(let num of arr){
+            console.log(num);
+        }
+
+
+        /*遍历map*/
+        /*for of 不仅可以遍历数组，也可以遍历map集合*/
+        var map=new Map([['Tom',33],['Jerry',44],['jack',55],['rose',30]]);
+         for(let num of map){
+             console.log(num)
+         }
+
+
+         /*遍历set*/
+        var set=new Set([3,5,7,9,95,5,4]);
+        for(let num of set){
+            console.log(num);
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

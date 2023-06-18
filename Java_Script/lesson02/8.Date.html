@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var now = new Date();//定义了一个对象
+    /*怎么看对象中的方法？   */
+    now.getFullYear();//年
+    now.getMonth();//月
+    now.getDate();//日
+
+    now.getDay();//星期几
+
+
+    now.getHours();//时
+    now.getMinutes();//分
+    now.getSeconds();//秒
+
+    now.getTime();//时间戳：1648389380792.
+    now.toLocaleString();//格式化时间
+
+
+
+
+    console.log(now.getHours());
+    console.log("今天是星期几：-->"+now.getDay());
+
+    console.log(now.getTime());/*时间戳：1648389380792.  全世界统一，从1970年一月一日：0:0：0开始的毫秒数*/
+    console.log("时间戳对应的日期时间为："+new Date(1648389380792));
+
+    console.log("时间打印成一定格式的结果：模板标准化的显示为：--->  "+new Date().toLocaleString());
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

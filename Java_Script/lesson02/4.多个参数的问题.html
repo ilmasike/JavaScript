@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*rest:获取除了当前参数之后的参数*/
+        function aaa(a,b,...rest) {
+            console.log("a的值为：-->"+a);
+            console.log("b的值为：-->"+b);
+
+
+            /*在es6之前，想获取除了ab外的参数怎么办？*/
+            if(arguments.length>2){
+                for (let i = 2; i <arguments.length ; i++) {
+                    console.log("老版本的获取的第"+(i+1)+"个参数为：-->"+arguments[i]);/*很麻烦！！！！！！！！！！！！！！！！！！！*/
+                }
+            }
+
+        //    新版本：
+            console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&新版本测得的剩余参数为:"+rest);
+
+
+
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

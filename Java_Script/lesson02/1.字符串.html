@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';/*必严格检查模式：须写在script第一行*/
+        //局部变量建议都使用let.  另外：如果直接写name='我是mako小姐姐';  此时name会是全局变量
+        let name='我是mako小姐姐';
+        // console.log('a');
+        // console.log("a");
+        // console.log('a\'');
+        // console.log("a\nb");
+        // console.log('a\tb')
+        // console.log('a\u4e2d');   //这里  \u####  表示用的是unicode编码，比如\u4e2d表示汉字“中”
+        var message=`mako
+        我爱你
+        我要代表月亮保护你
+        你逃不掉的！！${name}`;
+        console.log(message);
+
+
+
+        var person={
+            name:"mako",
+            age:2,
+            emaile:"10186@qq.com",
+            score:70
+        }
+        /*  for each 增强循环*/
+        var a=[1,23,546,778,90,0,34,5,46,658,989,66];
+        for(var num in a){
+            console.log(a[num])
+            /*注意：这里的num是索引，不是具体的值*/
+
+        }
+
+/*Map/Set*/
+        // var name=["Tom","Jerry","Rose","Jack"];
+        // var score=[60,50,70];
+        /*这样直接查比较困难，所以js出了个map*/
+        let map = new Map([['Tom',60],['Jerry',50],['Rose',70]]);
+        console.log(map.get('Tom'));
+        map.set("huzhenkun",89);/*set其实就是对map的新增*/
+        map.delete("huzhenkun");
+
+        var set=new Set([2,43,6,5,78,34,56,123,32,12,2]);/*Set会自动去重*/
+        set.add(666);
+        set.delete(2);
+        console.log(set.has(43));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

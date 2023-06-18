@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+
+
+</head>
+<body>
+<ul id="text-ul">
+    <li class="js">JavaScript</li>
+    <li name="Python">Python</li>
+    <li>bulma</li>
+    <li>kakaroute</li>
+    <li>taylor Swift</li>
+    <li name="gui">龟仙人</li>
+    <li>天津饭</li>
+    <li>则卷大饼</li>
+    <li>木绿茜</li>
+    <li>空豆太郎</li>
+</ul>
+
+
+<script>
+    //1.原来用js是怎么操作dom文本的很麻烦？
+    // var tu=document.getElementById('text-ul');//得到父节点，在通过父节点来删除子节点等。。。。。。。。贼麻烦
+    // tu.innerText='我爱你mako！！';
+
+//    2.现在通过jQuery来操作dom文本
+    $('#text-ul li[name=Python]').text();//拿到这个值
+    $('#text-ul li[name=Python]').text('我爱你mako-text!!!!!!1！！');//拿到并设置这个值：这里一行代码相当于js的两行
+    $('#text-ul li[name=gui]').html('<b>我爱你mako-html！！</b>');         //html同理
+
+
+//    3.css操作
+//    以前是用style属性，现在则用jQuery非常简单：
+    $('#text-ul li[name=Python]').css({"color": "#ff0011", "background": "blue" });
+
+
+//    4.元素的显示和隐藏：本质(其源码)是js代码中的display：none；
+    $('#text-ul li[name=Python]').show();
+//     $('#text-ul li[name=Python]').hide();//元素的隐藏
+
+//    5.娱乐高级玩法：
+    $(window).height();//高度等
+
+    $(document).height();
+
+    $('#text-ul li[name=Python]').toggle();//切换：如果是隐藏更改为显示。显示则更改为隐藏。
+</script>
+
+</body>
+</html>

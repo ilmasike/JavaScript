@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--jQuery就这一个公式：-->
+<!--$(选择器).action;-->
+
+<!--选择器就是css的选择器-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--cdn引入在线的：-->
+    <!--    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+    <script src="lib/jquery-3.6.0.js"></script>
+</head>
+<body>
+<a href="" id="test-jQuery">点我进百度</a>
+
+<script>
+    /*1.没有jquery之前是怎么获取节点的：？*/
+    // var tejq=document.getElementById("test-jQuery");
+    // tejq.click(function () {
+    //     alert("mako今天嫁给我！！！")
+    // });
+
+    //    2.现在可以通过jquery:
+    $('#test-jQuery').click(function () {
+        alert("mako今天嫁给我！！！")
+    });
+</script>
+
+<!--jQuery就这一个公式：-->
+<!--$(选择器).action;-->
+
+<!--选择器就是css的选择器-->
+</body>
+</html>

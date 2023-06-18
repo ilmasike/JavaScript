@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="id1">
+<!--成熟的前端代码，这里就是空div块，所有内容的添加修改，都不在这里进行。在document等修改！-->
+    我是原来的div块（按理说应该是空白的，很整洁）
+</div>
+
+
+<script>
+    'use strict';
+    var id1_ = document.getElementById('id1');
+
+    /*1.操作文本*/
+    id1_.innerText='卡卡罗特，请你和我当兄弟吧，我要代表月亮被你保护！！！';
+    id1_.innerHTML='<a href="https://www.jd.com">点我跳转到百度！！</a>';           /*HTML是超文本*/
+    id1_.innerText='<a href="https://www.jd.com">点我跳转到百度！！</a>';/*如果用text，就没办法转义为超链接，而只是文字。*/
+
+
+    /***************************************************/
+    /*2.操作css  :以前在网页中审查元素窗口下的style更改css。  现在在Console窗口：通过js的document获得属性id1_，就可以更改*/
+    id1_.innerText="a_b_c";
+    id1_.style.color='blue';/*设置css属性，比如颜色等！*/
+    id1_.style.fontSize='30px';
+
+//    3. 插入节点：追加操作（innerText相当于修改，会覆盖以前的内容）
+</script>
+</body>
+</html>

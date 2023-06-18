@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.原生的js选择器少，且有多麻烦？诸君请看：
+
+    // 按ID查找：
+    var a = document.getElementById('dom-id');
+    // 按tag查找：
+    var divs = document.getElementsByTagName('div');
+    // 查找<p class="red">：
+    var ps = document.getElementsByclassName('red');
+
+//    2.再来看看jQuery的选择器有多简单：
+    $('p').click();    //标签选择器
+    $('#id').click();   //id选择器
+    $('.class1').click(); //类选择器
+//    jQuery除了能用常见的css选择器(标签,类,id)，还有大量的其他选择器：
+    $(':even').click();
+
+
+//    3.事件；鼠标事件、键盘事件、其他事件
+    $('.class1').mousedown();//鼠标按下事件
+    $('.class1').mousemove();//鼠标移动事件
+    $('.class1').mousemove();//鼠标点击结束事件
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

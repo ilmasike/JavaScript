@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--我们能否做到,通过一个函数来发现,来提交的时候把里面的值,获取过来,并且我们可以在这个地方做一次检查?-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--    MD5在线链接,工具类。导入后下面可以用它-->
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+</head>
+<body>
+<form action="#"  method="post">  <!--action 是提交的url地址，#当前-->
+
+    <p>
+        <span>用户名：</span><input type="text"  id="username" name="username">
+    </p>
+    <p>
+        <span>密 码 ：</span> <input type="password" id="psw" name="psw">
+    </p>
+
+<!--    <input type="submit">                 &lt;!&ndash;提交除了用submit，也可以用button标签&ndash;&gt;-->
+    <button type="submit" onclick="aaa()">我是普通按钮，但是我也有提交功能</button>
+    <!--onclick:  绑定事件-->
+</form>
+
+<!--我们的目标是：提交表单的时候，拿到数据后通过一个函数做一次检查  -->
+<script>
+    function aaa() {
+        var uname =document.getElementById("username");//拿到数据
+        var pwd = document.getElementById("psw");
+        console.log(uname.value);
+
+        //为了安全：md5工具包 ，更改密码：
+        pwd.value=md5(pwd.value);/*这样别人抓你的包,但是他不能看到你的密码..当然,这里，用户体验并不好：输入框的密码在表单提交瞬间*号会变长。。。。*/
+        // 所以有高级玩法，尽量不用这种：pwd.value=md5(pwd.value);具体怎么更改此段，参考5.3： md5pwd.value=md5(pwd.value);直接通过隐藏提交。
+
+        console.log(pwd.value);//后台显示输出数据
+    }
+
+</script>
+</body>
+</html>

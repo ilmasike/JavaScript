@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+        function aaa() {
+            for (let i = 0; i < 100; i++) {
+                console.log("内部："+i);
+            }
+            // console.log("外部："+i);
+            /*如果是let定义的i,这里会显示报错，未定义：undefined。
+            /*var则不会，i出了这个作用域还是能用*/
+
+            /*现在建议使用let*/
+
+            const hzk='hututu';//只读变量.
+            console.log(hzk);
+            // hzk="hu";  更改就会报错:Attempt to assign to const or readonly variable
+
+        }
+        aaa();
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

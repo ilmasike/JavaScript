@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--    MD5在线链接,工具类。导入后下面可以用它-->
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <!--除了按钮绑定，还可以表单绑定提交事件：-->
+</head>
+
+<body>
+<!--表单绑定提交事件：
+onsubmit=return "aaa()"来绑定一个提交检测的函数。作用：获取一个TRUE或者FALSE。
+将这个结果返回给表单，使用onsubmit 接收。
+简言之：  就是一点击按钮，就要提交表单（在此之前，表单调用aaa(),通过返回值是FALSE则拦截提交。TRUE则正常提交。）
+-->
+<form action="https://www.jd.com"  method="post" onsubmit="return aaa()">  <!--action 是提交的url地址，#当前-->
+    <!--这里要记得，带着return-->
+
+    <p>
+        <span>用户名：</span><input type="text"  id="username" name="username">
+    </p>
+    <p>
+        <span>密 码 ：</span> <input type="password" id="input-password" ><!--这里password不要name:不让抓包能够抓到-->
+        <!--name写在这里，抓包能直接看到，所以不写在这里，抓包不能看到输入的密码。而我们下面可以将输入的密码input-password,赋值给md5-password。
+        既让别人看不到，又把密码赋值给了md5-password-->
+    </p>
+
+    <input type="hidden" id="md5-password" name="password"><!--不让别人抓到：直接锁定、隐藏-->
+
+
+<!--    <button type="submit" onclick="aaa()">我是普通按钮，但是我也有提交功能</button>-->
+    <button type="submit">我是普通按钮，但是我也有提交功能</button>
+
+</form>
+
+
+
+<!--我们的目标是：提交表单的时候，拿到数据后通过一个函数做一次检查  -->
+<script>
+    function aaa() {
+        var uname =document.getElementById("username");//拿到数据
+        var pwd = document.getElementById("input-password");/*这里拿到的是输入的密码，并不是hidden的隐藏的密码*/
+        var md5pwd = document.getElementById("md5-password");
+        md5pwd.value=md5(pwd.value);//将输入的密码input-password,赋值给md5-password。就是把密码赋值给name=password的md5-password了。此时抓包会发现password：是有显示数字的（加密）
+        // return false;
+
+        /*
+        * 这里可以校验判断表单内容(前提是表单也绑定提交事件onsubmit="return aaa()",按钮button不用再绑定了)，TRUE就是通过提交，FALSE就是阻止提交
+        * */
+        return true;
+    }
+</script>
+
+</body>
+</html>

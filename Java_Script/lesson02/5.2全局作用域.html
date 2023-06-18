@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*全局变量：window*/
+        var x='mako';
+        // alert(x);
+        // alert(window.x);/*默认所有的全局变量都会自动绑定在window对象下*/
+        // alert(window.alert());/*alert()方法，也是一个全局变量的方法，也可以用window调用*/
+
+        window.alert(x);/*调用一下*/
+
+
+        var old_alert=window.alert;
+        old_alert(x);/*调用一下*/
+
+        window.alert=function () {
+        }
+        window.alert(12323);//发现这里的alert（）失效，是因为var old_alert=window.alert;导致现在要用old_alert
+        old_alert(521);
+
+        /*想恢复怎么办？*/
+        window.alert=old_alert;
+        window.alert(12323);
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

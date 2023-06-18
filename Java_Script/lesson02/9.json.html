@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--原型：简单理解为父类-->
+
+</head>
+<body>
+<script>
+    'use strict';
+
+    var user={
+        name:"huzhenkun",
+        age:17,
+        s_ex:"male"
+    }
+    console.log(user);
+    console.log(user)
+    console.log(user)
+//    在前端打印出来console.log(user)： {name: "huzhenkun", age: 17, s_ex: "male"}
+
+    // 1.对象转化为json字符串：
+    var jsonUser=JSON.stringify(user);
+
+
+    console.log("console.log(user)---->"+user);
+    console.log("把对象转换为json字符串后的结果:---->"+JSON.stringify(user));
+//把对象转换为json字符串后的结果:---->{"name":"huzhenkun","age":17,"s_ex":"male"}
+//    对比{name: "huzhenkun", age: 17, s_ex: "male"}发现多了双引号,且浏览器上不能展开
+
+//    2.json 字符串转化为对象。
+    var obj=JSON.parse(jsonUser);
+    console.log("把json字符串转换为对象:---->");
+    console.log(obj);
+
+    var obj2=JSON.parse('{"name": "huzhenkun222", "age": 17222, "s_ex": "male222"}');/*prse里面的是String类型，应单引号括起来*/
+    console.log(obj2);
+
+
+
+
+    var person={
+        name:"huzhenkun",
+        age:17,
+        s_ex:"male",
+        run:function () {
+            console.log(this.name+"要开始跑了。。。。。。。。。。。。。。。。。。。");
+        }
+    }
+
+    var xiaoming={
+        name:"xiaoming"
+    }
+    xiaoming.__proto__=person;/*原型的方法（感觉类似于继承）：   于是乎小明的原型就成了person*/
+    /*此时的小明是可以用run（）*/
+    /*小明的原型指向了 person*/
+
+
+    var bird={
+        fiy:function (){
+        console.log(this.name+"的鸟要飞走了。有些鸟儿是关不住的，他们的羽毛太过明亮：some birds can't be closed,that their sweaf are  too bright ");
+        }
+    }
+
+    xiaoming.__proto__=bird;/*小明的原型改为bird(继承鸟)，就可以使用飞的方法了！！！*/
+
+
+</script>
+
+</body>
+</html>

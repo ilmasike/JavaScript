@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        'use strict';
+        function abs(x) {
+            if(x>=0){
+                return x;
+
+            }else{
+                return -x;
+            }
+
+        }
+
+
+        //argument是js免费赠送的一个关键词.是一个数组,代表传递进来的所有参数.
+        var abs2=function (x) {
+            console.log("x的值为：--> "+x);
+
+            /*传进来参数可能不止一个，这里可以通过argumen遍历*/
+            for (let i = 0; i <arguments.length ; i++) {
+                console.log("遍历的值第"+i+"个值为：-->"+arguments[i]);
+            }
+
+            if(arguments.length>1){/*说明传进来的不止一个参数*/
+                console.log( "传进来的其他参数为（这里是第二个）："+arguments[1]);/*可以拿到下面的参数，需要时可用*/
+            }
+
+
+
+            /*手动抛出异常*/
+            if(typeof x !=="number"){
+                throw 'not a number';/*异常判断*/
+            }
+
+            if(x>=0){
+                return x;
+
+            }else{
+                return -x;
+            }
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

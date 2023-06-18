@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--事件:无非鼠标,键盘,其他事件-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <style>
+        #divMove{
+            width: 500px;
+            height: 500px;
+            border:1px solid red;
+        }
+    </style>
+
+</head>
+<body>
+<!--需求：获取鼠标的移动轨迹（获取鼠标的当前坐标）：-->
+mouse显示区域:
+<span id="mouseMove"></span>
+<div id="divMove">
+    在这里移动鼠标试试：
+</div>
+
+<script>
+    /*当网页元素加载完毕之后，响应事件*/
+//    最早的时候对于网页（document），写成$(document).ready(function(){  })   其中document是网页，ready是加载完毕的意思，
+//     function是即将执行的函数。这一行代码可以简写：
+    $(function () {
+    //    事件1：获取鼠标的移动事件：
+        $('#divMove').mousemove(function (e) {
+        //  e拿到了鼠标的移动的坐标，我们把它显示到 mouseMove中。
+            $('#mouseMove').text('x:'+e.pageX+' y'+e.pageY)   //给mouseMove区域加一些文字
+
+
+        })
+
+    });
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

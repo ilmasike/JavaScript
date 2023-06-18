@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<form action="3.插入节点.html" method="get">-->
+<form method="get">
+
+    <p>
+        <span>用户名：</span><input type="text"  id="username">
+    </p>
+
+    <p><!--多选框的值，就是定义好的value-->
+        <span>性别：</span>
+        <input type="radio" name="se_x" value="man" id="boy" >男
+        <input type="radio" name="se_x" value="woman"  id="girl">女
+    </p>
+
+    <input type="submit">
+</form>
+
+
+<script>
+    //1.获取节点
+    var input_text=document.getElementById("username");
+    input_text.value;/*得到输入框的值*/
+    input_text.value ="123456789aaa";//修改赋值
+
+    //    1.1获取多选框（男女）  里面的值：
+    var boy_radio=document.getElementById("boy");
+    var girl_radio=document.getElementById("girl");
+    boy_radio.value;//"man"
+    girl_radio.value;//"woman"
+    /*注意：对于单选框，多选框等固定的值：boy_radio.value只能拿到当前的值，并不是我们希望的男或女*/
+    boy_radio.checked;//查看返回的结果是否为TRUE：  可以通过这个判断是否选择了 对应的男女
+    girl_radio.checked;
+    //如果想让女孩被选中：
+    girl_radio.checked=true;
+
+    // var input=document.getElementsByTagName('input');
+</script>
+
+
+</body>
+</html>

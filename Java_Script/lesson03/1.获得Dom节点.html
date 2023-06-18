@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--    BOM:浏览器对象模型;
+DOM:文档对象模型.浏览器网页就是一个dom树形结构.dom节点就是数中的某个点,比如body,比如某个div-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--获得dom节点：这里是原生代码,用标签选择器类选择器等原生代码，之后我们尽量都是用jQuery()-->
+    <style>
+        #father{}
+        .p2{}
+    </style>
+
+
+
+</head>
+<body>
+<div id="father">
+    <h1>我是标题1</h1>
+    <p id="p1">p1</p>
+    <p class="p2">p2</p>
+    <p>p3</p>
+</div>
+
+
+<script>
+    'use strict';
+    /*1.对应css的选择器*/
+
+    /*想获得节点：以前是用style下的标签选择器，现在是通过document(代表当前文档树)*/
+    var h1 =document.getElementsByTagName('h1');//类似于标签选择器，拿到h1             /*document代表当前的dom对象*/
+    var id_ =document.getElementById('p1');
+    var class_ =document.getElementsByClassName('p2');
+
+    var father_=document.getElementById('father');
+
+
+    //2.father_.children可以拿到父节点下面的所有子节点，方便后期操作
+    var childs_=  father_.children;
+    // father_.firstChild;
+    // father_.lastChild;
+
+
+    //    3.1.删除dom
+    // 拿到待删除节点:
+    // var self = document.getElementById('p1');
+    // // 拿到父节点:
+    // var parent = self.parentElement;
+    // // 删除:
+    //  parent.removeChild(self);
+
+    //    3.2.删除dom
+    father_.children;     //  [h1, p#p1, p.p2, p, p1: p#p1]
+    father_.removeChild(father_.children[0]);//注意删除是一个动态的过程，下标不断变化的。。。。。
+    /*，当 First 节点被删除
+后， parent.children 的节点数量已经从2变为了1，索引 [1] 已经不存在了。
+因此，删除多个节点时，要注意 children 属性时刻都在变化。
+*/
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

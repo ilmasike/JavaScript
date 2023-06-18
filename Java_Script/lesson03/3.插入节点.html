@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    body是个数组，拿到里面的body[0]才是节点    按类名，按标签名获取得到的都是集合：
+    TagName的返回值，不管有几个，都是数组形式 *-->
+
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="" ></script>
+<!--    <style>-->
+<!--        #me{-->
+<!--            background-color: mediumpurple;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+
+<p id="p1">javaScript</p>
+<div id="id1">
+    <p id="se">javaSE</p>
+    <p id="ee">javaEE</p>
+    <P id="me" class="me">javaME</P>
+    <p id="mako">mako</p>
+</div>
+
+<script>
+    'use strict';
+    var id_=document.getElementById("id1");
+    //    1. 插入节点：追加操作（innerText相当于修改，会覆盖以前的内容）
+    // id_.innerText='我是innertext来插入的文本';
+    // id_.innerText='我是innertext来插入的文本第二个文本，我已经覆盖了第一个';
+
+    var
+        p1_=document.getElementById("p1");  //javaScript
+    var id_=document.getElementById("id1");
+    id_.appendChild(p1_);  //把javaScript添加到div块中
+
+
+    //    2.1通过js创建一个新的节点
+    var new_Hzk=document.createElement('huzhenkun');//创建一个‘huzhenkun’标签
+    new_Hzk.id='hzk1';/*    相当于：<huzhenkun id="hzk1"></huzhenkun>*/
+    /*这一行等价于：    new_Hzk.setAttribute('id','hzk1')*/
+    new_Hzk.innerText='我是新加的标签！！我的标签是<huzhenkun id="hzk1"></huzhenkun>。。。';
+
+    // var hzk22=document.getElementById("hzk1");
+    id_.appendChild(new_Hzk);   //把  新标签   添加到div块中
+
+
+
+
+    //    2.2创建一个标签节点：假如想创建特殊的比如script标签：
+    var script_=document.createElement('script');//创建一个‘script’标签
+    script_.id='sp';/*    相当于：<script id="sp"></scri pt>*/
+    id_.appendChild(script_);   //把  新标签   添加到div块中
+
+    /*这样除了老办法写：我们也可以这样写（正规写法）：创建一个标签节点（通过这个属性， 可以设置任意的值）
+     ********************************************************************************
+     * ********************************************************************************/
+    var script_=document.createElement('script');//创建一个‘script’标签
+    script_.setAttribute('type','text/javscript');//里面对象《script》的两个值：key,value.    <script type="text/javscript" src="" ></sc ript>
+    id_.appendChild(script_);   //把  新标签   添加到div块中
+
+
+
+    //    3.通过js来添加css的样式：
+    //     var new_Hzk=document.createElement('huzhenkun');
+    new_Hzk.style.color='blue';
+
+
+    //    4.怎么获取body？
+    var body=document.getElementsByTagName('body');/*body是个数组，拿到里面的body[0]才是节点*/
+    //4.1变色操作
+    // body[0].style.backgroundColor='blue';
+    //4.2也可以通过 添加<style>来实现变色：
+    // body[0].setAttribute('style','background-color:pink');//等价于：<body style="background-color: pink">
+
+
+//    4.3创建style标签：
+    var myStyle=document.createElement('style');//创建空<style>标签
+    myStyle.setAttribute('type','text/css');//设置标签属性：<style type="text/css"></style>
+    myStyle.innerText='#me{ background-color: mediumpurple;}';//设置标签内容
+    // id_.appendChild(myStyle);   //把  新标签   添加到div块中:
+    var head=document.getElementsByTagName("head");//获得head标签
+    head[0].appendChild(myStyle);//把  新标签   添加到<head>块中:
+//    等价于：    <style>
+//     #me{
+//         background-color: mediumpurple;
+//     }
+//     </style>
+
+
+    // 5.1插到前面：insertBefore
+    var id_=document.getElementById("id1");
+    var se = document.getElementById("se");
+    var ee = document.getElementById("ee");
+    var me = document.getElementById("me");
+    var mako = document.getElementById("mako");
+    /*在 id_块下：把mako插入到ee的前面： id_相当于父节点，mako是新节点，ee是旧节点（目标节点） */
+    id_.insertBefore(mako,ee);
+
+    // 5.2插到后面：insertAfter
+    var id_=document.getElementById("id1");
+    var se = document.getElementById("se");
+    var ee = document.getElementById("ee");
+    var me = document.getElementById("me");
+    var mako = document.getElementById("mako");
+    /*在 id_块下：把mako插入到ee的前面： id_相当于父节点，mako是新节点，ee是旧节点（目标节点） */
+    id_.insertBefore(mako,ee);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
